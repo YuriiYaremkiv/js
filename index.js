@@ -191,14 +191,35 @@
 // console.log(allAnagrams(["abcd", "bdac", "cabd"])); // true
 // console.log(allAnagrams(["abcd", "bdXc", "cabd"])); // false
 //=============================================================== Перевернуть матрицу 3х3
-const matrix = [
-  [1, 2, 3],
-  [4, 5, 6],
-  [7, 8, 9]
-]
+// const matrix = [
+//   [1, 2, 3],
+//   [4, 5, 6],
+//   [7, 8, 9]
+// ]
 
-function rotate(source) {
-  // todo
-}
+// function rotate(source) {
+//   const newMatrix = source[0].map(() => [])
 
-console.log(rotate(matrix))
+//   for (let i = 0; i < source.length; i++) {
+//     for (let j = 0; j < source[0].length; j++) {
+//       newMatrix[j][source.length - 1 - i] = source[i][j]
+//     }
+//   }
+
+//   return newMatrix
+// }
+
+
+// console.log(rotate(matrix))
+
+// [1, 2, 3]    [7, 4, 1]
+// [4, 5, 6] -> [8, 5, 2]
+// [7, 8, 9]    [9, 6, 3]
+//===============================================================
+/*Напишите функцию, которая принимает отсортированный массив с числами и число. Необходимо вернуть индекс числа, если оно есть в массиве. Иначе вернуть -1.*/
+// function search(array, target) {
+//   return array.indexOf(target);
+// }
+
+// console.log(search([1, 3, 6, 13, 17], 13)) // -> 3
+// console.log(search([1, 3, 6, 13, 17], 12)) // -> -1
