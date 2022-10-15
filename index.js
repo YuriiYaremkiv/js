@@ -146,19 +146,59 @@
 // console.log(isStringRotated("javascript", "iptjavascr")); // -> true
 // console.log(isStringRotated("javascript", "java")); // -> false
 //=============================================================== Является ли массив подмножеством другого массива
-function arraySubset(source, subset) {
-  if (source.length < subset.length || new Set(subset).size !== subset.length) {
-    return false;
-  }
-  for (let i = 0; i < subset.length; i++) {
-    if (!source.includes(subset[i])) {
-      return false;
-    }
-  }
-  return true;
+// function arraySubset(source, subset) {
+//   if (source.length < subset.length) {
+//     return false;
+//   }
+//   for (let i = 0; i < subset.length; i++) {
+//     const index = source.indexOf(subset[i]);
+//     if (index === -1 ) {
+//         return false;
+//     }
+//     delete source[index];
+//   }
+//   return true;
+// }
+
+// console.log(arraySubset([2, 1, 3], [1, 2, 3])); // -> true
+// console.log(arraySubset([2, 1, 1, 3], [1, 2, 3])); // -> true
+// console.log(arraySubset([1, 1, 1, 3], [1, 3, 3])); // -> false
+// console.log(arraySubset([1, 2], [1, 2, 3])); // -> false
+//=============================================================== Анаграммы
+// function allAnagrams(array) {
+//   const string = array[0];
+//   for (let i = 1; i < array.length; i++) {
+//     for (let j = 0; j < array[i].length; j++) {
+//       if (!string.includes(array[i][j])) {
+//         return false;
+//       }
+//     }
+//   }
+//   return true;
+// }
+// //**********************************************************************
+// function allAnagrams(array) {
+//   const sorted = array.map((str) => str.split("").sort().join(""));
+
+//   for (let i = 1; i < array.length; i++) {
+//     if (sorted[i] !== sorted[0]) {
+//       return false;
+//     }
+//   }
+//   return true;
+// }
+
+// console.log(allAnagrams(["abcd", "bdac", "cabd"])); // true
+// console.log(allAnagrams(["abcd", "bdXc", "cabd"])); // false
+//=============================================================== Перевернуть матрицу 3х3
+const matrix = [
+  [1, 2, 3],
+  [4, 5, 6],
+  [7, 8, 9]
+]
+
+function rotate(source) {
+  // todo
 }
 
-console.log(arraySubset([2, 1, 3], [1, 2, 3])); // -> true
-console.log(arraySubset([2, 1, 1, 3], [1, 2, 3])); // -> true
-console.log(arraySubset([1, 1, 1, 3], [1, 3, 3])); // -> false
-console.log(arraySubset([1, 2], [1, 2, 3])); // -> false
+console.log(rotate(matrix))
