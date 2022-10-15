@@ -122,3 +122,43 @@
 //     "ghi",
 //   ])
 // ); // -> ghi
+//=============================================================== Повернута ли строка?
+// function isStringRotated(source, test) {
+//   if (source.length !== test.length) {
+//     return false;
+//   }
+
+//   for (let i = 0; i < source.length; i++) {
+//     const rotate = source.slice(i, source.length) + source.slice(0, i);
+
+//     if (rotate === test) {
+//       return true;
+//     }
+//   }
+//   return false;
+//}
+// //**********************************************************************
+// function isStringRotated(source, test) {
+//   return (source + source).includes(test) && source.length === test.length;
+// }
+
+// console.log(isStringRotated("jovascript", "scriptjava")); // -> true
+// console.log(isStringRotated("javascript", "iptjavascr")); // -> true
+// console.log(isStringRotated("javascript", "java")); // -> false
+//=============================================================== Является ли массив подмножеством другого массива
+function arraySubset(source, subset) {
+  if (source.length < subset.length || new Set(subset).size !== subset.length) {
+    return false;
+  }
+  for (let i = 0; i < subset.length; i++) {
+    if (!source.includes(subset[i])) {
+      return false;
+    }
+  }
+  return true;
+}
+
+console.log(arraySubset([2, 1, 3], [1, 2, 3])); // -> true
+console.log(arraySubset([2, 1, 1, 3], [1, 2, 3])); // -> true
+console.log(arraySubset([1, 1, 1, 3], [1, 3, 3])); // -> false
+console.log(arraySubset([1, 2], [1, 2, 3])); // -> false
